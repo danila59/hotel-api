@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: hotel-api
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+server:
+  port: 8092
+
+springdoc:
+  api-docs:
+    path: /property-view/api-docs
+  swagger-ui:
+    path: /property-view/swagger-ui.html
+
+logging:
+  level:
+    org.example.hotelapi: DEBUG
+    org.example.hotelapi.service: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %level - %msg%n"
